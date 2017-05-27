@@ -14,8 +14,14 @@ def sms_reply():
 	resp = MessagingResponse()
 	
 	#Fix origin. Start and end destinations.
-	origin = '280 Simcoe St, Toronto, ON'
-	destination = request.values.get('Body', None)
+	
+	user_input = request.values.get('Body', None)
+	string_array = user_input.split('\n')
+		
+	origin = string_array[0]
+	#print (origin)
+	destination = string_array[1]
+	#print (destination)
 	
 	#converts to string form appropriate for the address bar with plus signs
 	origin = origin.replace(' ', '+')
