@@ -42,9 +42,7 @@ def sms_reply():
 	
 		directions_list += append_this_step
 	
-		#Cleans string.
-		#directions_list = str(re.sub("<b>", "", directions_list))
-		#directions_list = str(re.sub("</b>", "", directions_list))
+		#Cleans string.		
 		directions_list = str(re.sub("<.*?>", "", directions_list))
 		
 		if directions_list.endswith('Destination will be on the right\n'):
